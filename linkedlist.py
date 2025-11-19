@@ -18,7 +18,7 @@ class linkedlist:
     def insert_at_end(self,data):
         node=Node(data)
         last=self.head
-        while last.next is not None:
+        while last is not None:
             last=last.next
         last.next=node
     def delete_by_data(self,d):
