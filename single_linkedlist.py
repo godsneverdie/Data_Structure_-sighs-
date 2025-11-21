@@ -28,9 +28,29 @@ class linkedlist:
         while last.next is not None:
             last=last.next
         last.next=node
+    def insert_after_value(self,key,data):
+        node=Node(data)
+        head=self.head
+        while head.next != None:
+            if head.data==key:
+                break;
+            head=head.next
+        node.next=head.next
+        head.next=node
+    def insert_before_value(self,key,data):
+        node=Node(data)
+        head=self.head
+        while head.next!=None:
+            if head.next.data==key:
+                break
+            head=head.next
+        node.next=head.next
+        head.next=node
 ll=linkedlist()
 ll.insert_at_start(1)
 ll.insert_at_end(3)
 ll.insert_at_end(6)
 ll.insert_at_end(9)
+ll.insert_after_value(6,7)
+ll.insert_before_value(9,8)
 ll.display()
