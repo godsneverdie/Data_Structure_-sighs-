@@ -4,7 +4,7 @@ class stack:
         self.arr=[None]*cap
         self.top=-1
     def push(self,data):
-        if self.top==self.cap:
+        if self.top==self.cap-1:
             print("Stack is Full")
             return
         self.top+=1
@@ -17,6 +17,8 @@ class stack:
         self.arr[self.top]=None
         self.top-=1
     def disp(self):
+        if self.top==-1:
+            print("Empty Stack")
         print(f"Stack: {self.arr} and Top - {self.top}")
 s=stack(5)
 s.push(2)
