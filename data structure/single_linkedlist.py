@@ -49,9 +49,15 @@ class linkedlist:
         head.next=node
 #Delete::::::::::::::::::::::::::::::::::::::
     def delete_first(self):
+        if self.head==None:
+            print("List is empty")
+            return
         self.head=self.head.next
     def delete_by_value(self,key):
         head=self.head
+        if self.head==None:
+            print("List is empty")
+            return
         if head.data == key:
             self.head=head.next
         while head.next!=None:
@@ -59,7 +65,14 @@ class linkedlist:
                 head.next=head.next.next
             head=head.next
         
-    
+    def delete_last(self):
+        if self.head==None:
+            print("List is empty")
+            return
+        head=self.head
+        while head.next.next!=None:
+            head=head.next
+        head.next=None
     def count(self):
         count=0
         head=self.head
@@ -74,6 +87,6 @@ ll.insert_at_end(6)
 ll.insert_at_end(9)
 ll.insert_after_value(6,7)
 ll.insert_before_value(9,8)
-ll.delete_by_value(1)
+ll.delete_last()
 ll.display()
 ll.count()
