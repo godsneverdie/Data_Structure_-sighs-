@@ -46,6 +46,13 @@ class linkedlist:
             head=head.next
         node.next=head.next
         head.next=node
+    def count(self):
+        count=0
+        head=self.head
+        while head != None:
+            count+=1
+            head=head.next
+        print(f"Total number of nodes are: {count}")
 ll=linkedlist()
 ll.insert_at_start(1)
 ll.insert_at_end(3)
@@ -54,3 +61,4 @@ ll.insert_at_end(9)
 ll.insert_after_value(6,7)
 ll.insert_before_value(9,8)
 ll.display()
+ll.count()
