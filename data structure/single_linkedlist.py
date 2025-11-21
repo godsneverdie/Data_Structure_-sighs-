@@ -18,6 +18,7 @@ class linkedlist:
         for i in elements:
             op+='--->'+str(i)
         print(op)
+#Insert:::::::::::::::::::::::::::::::
     def insert_at_start(self,data):
         node=Node(data)
         node.next=self.head
@@ -46,6 +47,19 @@ class linkedlist:
             head=head.next
         node.next=head.next
         head.next=node
+#Delete::::::::::::::::::::::::::::::::::::::
+    def delete_first(self):
+        self.head=self.head.next
+    def delete_by_value(self,key):
+        head=self.head
+        if head.data == key:
+            self.head=head.next
+        while head.next!=None:
+            if head.next.data == key:
+                head.next=head.next.next
+            head=head.next
+        
+    
     def count(self):
         count=0
         head=self.head
@@ -60,5 +74,6 @@ ll.insert_at_end(6)
 ll.insert_at_end(9)
 ll.insert_after_value(6,7)
 ll.insert_before_value(9,8)
+ll.delete_by_value(1)
 ll.display()
 ll.count()
